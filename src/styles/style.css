@@ -1,0 +1,60 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+.content__heading {
+  margin-bottom: 20px;
+}
+
+.news-source {
+  position: absolute;
+  top: 15px;
+  padding: 5px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0px 5px 5px 0px;
+  background-color: #4d42e9;
+  color: white;
+}
+
+.bookmark-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+
+footer {
+  padding: 16px;
+}
+
+footer p {
+  text-align: center;
+  color: #aaaaaa;
+}
+
+footer p a {
+  color: #0f00db;
+  text-decoration: none;
+  padding: 12px 0px;
+}
