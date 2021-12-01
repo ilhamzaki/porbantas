@@ -3,7 +3,7 @@ const createNewsItemTemplate = (news) => `
             <div class="row g-0">
                 <div class="col-md-4">
                     <div class="news-source">${news.source.name}</div>
-                    <img src="${news.urlToImage}" class="img-fluid rounded-start" alt="news-image">
+                    <img src="${news.urlToImage}" class="img-fluid rounded-start" alt="image-news ${news.source.name}">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
