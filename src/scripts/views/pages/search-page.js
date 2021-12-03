@@ -21,10 +21,15 @@ const SearchPage = {
     const searchData = news.filter((item) => item.title.toLowerCase().includes(searchElement.value.toLowerCase()));
     console.log(searchData);
     console.log(searchElement.value);
-    document.querySelector('#heading-search').innerHTML = `Hasil pencarian "${searchElement.value}"`;
-    searchData.forEach((item) => {
-      newsContainer.innerHTML += createNewsItemTemplate(item);
-    });
+    if (searchElement.value === '' || searchData.length === 0) {
+      document.querySelector('#heading-search').innerHTML = `Hasil pencarian ${searchElement.value} tidak ditemukan`;
+      this.render();
+    } else {
+      document.querySelector('#heading-search').innerHTML = `Hasil pencarian "${searchElement.value}"`;
+      searchData.forEach((item) => {
+        newsContainer.innerHTML += createNewsItemTemplate(item);
+      });
+    }
   },
 };
 
