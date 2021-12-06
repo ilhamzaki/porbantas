@@ -6,6 +6,7 @@ import Health from '../views/pages/category/health';
 import Science from '../views/pages/category/science';
 import Sport from '../views/pages/category/sports';
 import Technology from '../views/pages/category/technology';
+import SearchPage from '../views/pages/search-page';
 
 const routes = {
   '/': Home,
@@ -16,6 +17,8 @@ const routes = {
   '/sports': Sport,
   '/technology': Technology,
   '/bookmark': Bookmark,
+  // search:searchElement.value (solusi untuk bug pencarian ke 2x, harus perpindah routes)
+  '/search/:keyword': SearchPage,
 };
 
 export default routes;

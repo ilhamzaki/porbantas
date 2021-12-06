@@ -58,3 +58,20 @@ footer p a {
   text-decoration: none;
   padding: 12px 0px;
 }
+
+/* bootstrap edited */
+
+.card-img-overlay {
+  top: unset;
+  padding: 2rem;
+}
+
+.bg-color {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.overlays-title {
+  color: white;
+  font-weight: 800;
+  font-size: 26px;
+}

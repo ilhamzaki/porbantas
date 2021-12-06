@@ -1,11 +1,11 @@
+/* eslint-disable no-plusplus */
 import NewsSource from '../../data/news-source';
-import createNewsItemTemplate from '../templates/template-creator';
+import { createNewsItemTemplate, createNewsImageOverlays } from '../templates/template-creator';
 
 const Home = {
   async render() {
     return `
     <div class="content">
-        <h2 class="content__heading">Berita Terkini</h2>
         <div id="news" class="news">
 
         </div>
@@ -16,8 +16,14 @@ const Home = {
   async afterRender() {
     const news = await NewsSource.home();
     const newsContainer = document.querySelector('#news');
+    let i = 0;
     news.forEach((item) => {
-      newsContainer.innerHTML += createNewsItemTemplate(item);
+      if (i === 0) {
+        newsContainer.innerHTML += createNewsImageOverlays(item);
+      } else {
+        newsContainer.innerHTML += createNewsItemTemplate(item);
+      }
+      i++;
     });
   },
 };
