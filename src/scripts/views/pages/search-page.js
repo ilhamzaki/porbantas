@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import NewsSource from '../../data/news-source';
-import createNewsItemTemplate from '../templates/template-creator';
+import { createNewsItemTemplate } from '../templates/template-creator';
 
 const SearchPage = {
   async render() {

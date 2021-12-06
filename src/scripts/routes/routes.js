@@ -17,7 +17,8 @@ const routes = {
   '/sports': Sport,
   '/technology': Technology,
   '/bookmark': Bookmark,
-  '/search': SearchPage,
+  // search:searchElement.value (solusi untuk bug pencarian ke 2x, harus perpindah routes)
+  '/search/:keyword': SearchPage,
 };
 
 export default routes;
