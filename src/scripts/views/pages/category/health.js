@@ -1,5 +1,5 @@
 import NewsSource from '../../../data/news-source';
-import createNewsItemTemplate from '../../templates/template-creator';
+import { createNewsItemTemplate } from '../../templates/template-creator';
 
 const Health = {
   async render() {
