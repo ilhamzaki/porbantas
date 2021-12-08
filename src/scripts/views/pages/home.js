@@ -1,6 +1,5 @@
-/* eslint-disable no-plusplus */
 import NewsSource from '../../data/news-source';
-import { createNewsItemTemplate, createNewsImageOverlays } from '../templates/template-creator';
+import { createNewsItemTemplate, createNewsImageOverlays, createNewsItemSide } from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -10,20 +9,25 @@ const Home = {
 
         </div>
     </div>
+    <side-bar></side-bar>
         `;
   },
 
   async afterRender() {
     const news = await NewsSource.home();
     const newsContainer = document.querySelector('#news');
+    const sideNewsItem = document.querySelector('#sideItem');
     let i = 0;
-    news.forEach((item) => {
+    news.slice(0, 15).forEach((item) => {
       if (i === 0) {
         newsContainer.innerHTML += createNewsImageOverlays(item);
       } else {
         newsContainer.innerHTML += createNewsItemTemplate(item);
       }
       i++;
+    });
+    news.slice(15, 20).forEach((item, index) => {
+      sideNewsItem.innerHTML += createNewsItemSide(item, index);
     });
   },
 };

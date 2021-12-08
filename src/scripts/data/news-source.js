@@ -43,6 +43,12 @@ class NewsSource {
     const responeJson = await response.json();
     return responeJson.articles;
   }
+
+  static async search_news(keyword) {
+    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=id&apiKey=4a1c0fd7b4b749818b35ff058e50912a&q=${keyword}`);
+    const responeJson = await response.json();
+    return responeJson.articles;
+  }
 }
 
 export default NewsSource;
