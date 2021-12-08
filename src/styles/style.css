@@ -17,22 +17,54 @@ body {
   flex-direction: column;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 main {
   padding: 32px;
   flex: 1;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 10%;
 }
 
 .content__heading {
   margin-bottom: 20px;
 }
 
+#content {
+  width: 50%;
+}
+
+side-bar {
+  width: 50%;
+}
+
+.news-title {
+  font-size: 18px;
+  color: black;
+}
+
+.news-desciption {
+  font-size: 12px;
+}
+
+.side-news-title {
+  font-size: 18px;
+  color: black;
+}
+
 .news-source {
   position: absolute;
-  top: 15px;
+  top: 0;
   padding: 5px 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 0px 5px 5px 0px;
-  background-color: #4d42e9;
+  border-radius: 0px 0px 5px 0px;
   color: white;
 }
 
@@ -73,5 +105,15 @@ footer p a {
 .overlays-title {
   color: white;
   font-weight: 800;
-  font-size: 26px;
+  font-size: 24px;
+}
+
+.card-header {
+  border-radius: unset;
+  background-color: unset;
+  font-weight: 700;
+}
+
+.list-group-item {
+  border: none;
 }

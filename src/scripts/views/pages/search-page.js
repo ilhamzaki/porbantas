@@ -11,22 +11,21 @@ const SearchPage = {
 
         </div>
     </div>
+    <side-bar></side-bar>
         `;
   },
 
   async afterRender() {
-    const news = await NewsSource.home();
     const searchElement = document.querySelector('#search-bar');
     const newsContainer = document.querySelector('#news');
-    const searchData = news.filter((item) => item.title.toLowerCase().includes(searchElement.value.toLowerCase()));
-    console.log(searchData);
-    console.log(searchElement.value);
-    if (searchElement.value === '' || searchData.length === 0) {
+    const news = await NewsSource.search_news(searchElement.value.toLowerCase());
+    console.log(news);
+    if (searchElement.value === '' || news.length === 0) {
       document.querySelector('#heading-search').innerHTML = `Hasil pencarian ${searchElement.value} tidak ditemukan`;
       this.render();
     } else {
       document.querySelector('#heading-search').innerHTML = `Hasil pencarian "${searchElement.value}"`;
-      searchData.forEach((item) => {
+      news.forEach((item) => {
         newsContainer.innerHTML += createNewsItemTemplate(item);
       });
     }

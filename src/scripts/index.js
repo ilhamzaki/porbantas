@@ -2,6 +2,7 @@ import 'regenerator-runtime';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/style.css';
 import './component/app-bar';
+import './component/side-bar';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
