@@ -4,7 +4,6 @@ class NewsSource {
   static async home() {
     const response = await fetch(API_ENDPOINT.HOME);
     const responeJson = await response.json();
-    console.log(responeJson.articles);
     return responeJson.articles;
   }
 

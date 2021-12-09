@@ -18,7 +18,7 @@ const Home = {
     const newsContainer = document.querySelector('#news');
     const sideNewsItem = document.querySelector('#sideItem');
     let i = 0;
-    news.slice(0, 15).forEach((item) => {
+    news.slice(0, 5).forEach((item) => {
       if (i === 0) {
         newsContainer.innerHTML += createNewsImageOverlays(item);
       } else {
