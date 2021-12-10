@@ -1,11 +1,11 @@
 import NewsSource from '../../../data/news-source';
-import { createNewsImageOverlays, createNewsItemTemplate } from '../../templates/template-creator';
+import { createInternationalNewsItemTemplate, createNewsImageOverlays, createNewsItemSide, createNewsItemTemplate } from '../../templates/template-creator';
 
 const Science = {
   async render() {
     return `
     <div class="content">
-        <h2 class="content__heading">Sains</h2>
+        <h2 class="card-header">Sains</h2>
         <div id="news" class="news">
 
         </div>
@@ -17,14 +17,26 @@ const Science = {
   async afterRender() {
     const news = await NewsSource.category_science();
     const newsContainer = document.querySelector('#news');
+    const topNewsItem = document.querySelector('#topNews');
     let i = 0;
-    news.forEach((item) => {
+    news.slice(0, 5).forEach((item) => {
       if (i === 0) {
         newsContainer.innerHTML += createNewsImageOverlays(item);
       } else {
         newsContainer.innerHTML += createNewsItemTemplate(item);
       }
       i++;
+    });
+    news.slice(15, 20).forEach((item, index) => {
+      topNewsItem.innerHTML += createNewsItemSide(item, index);
+    });
+
+    const interNews = await NewsSource.international_news();
+    console.log(interNews);
+    const internationalNewsItem = document.querySelector('#internationalNews');
+    console.log(internationalNewsItem);
+    interNews.slice(0, 5).forEach((item) => {
+      internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
   },
 };

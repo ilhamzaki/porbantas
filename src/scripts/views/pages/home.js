@@ -1,5 +1,10 @@
 import NewsSource from '../../data/news-source';
-import { createNewsItemTemplate, createNewsImageOverlays, createNewsItemSide } from '../templates/template-creator';
+import {
+  createNewsItemTemplate,
+  createNewsImageOverlays,
+  createNewsItemSide,
+  createInternationalNewsItemTemplate,
+} from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -16,9 +21,9 @@ const Home = {
   async afterRender() {
     const news = await NewsSource.home();
     const newsContainer = document.querySelector('#news');
-    const sideNewsItem = document.querySelector('#sideItem');
+    const topNewsItem = document.querySelector('#topNews');
     let i = 0;
-    news.slice(0, 15).forEach((item) => {
+    news.slice(0, 5).forEach((item) => {
       if (i === 0) {
         newsContainer.innerHTML += createNewsImageOverlays(item);
       } else {
@@ -27,7 +32,15 @@ const Home = {
       i++;
     });
     news.slice(15, 20).forEach((item, index) => {
-      sideNewsItem.innerHTML += createNewsItemSide(item, index);
+      topNewsItem.innerHTML += createNewsItemSide(item, index);
+    });
+
+    const interNews = await NewsSource.international_news();
+    console.log(interNews);
+    const internationalNewsItem = document.querySelector('#internationalNews');
+    console.log(internationalNewsItem);
+    interNews.slice(0, 5).forEach((item) => {
+      internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
   },
 };

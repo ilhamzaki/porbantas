@@ -5,7 +5,7 @@ class AppBar extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+        <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold" href="#/">Porbantas</a>
                 <button id="hamburgerButton" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,25 +15,22 @@ class AppBar extends HTMLElement {
                 <div id="navigationDrawer" class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a id="business" class="nav-link" href="#/business">Bisnis</a>
+                            <a id="business" class="nav-link p-3" href="#/business">Bisnis</a>
                         </li>
                         <li class="nav-item">
-                            <a id="entertainment" class="nav-link" href="#/entertainment">Hiburan</a>
+                            <a id="entertainment" class="nav-link p-3" href="#/entertainment">Hiburan</a>
                         </li>
                         <li class="nav-item">
-                            <a id="health" class="nav-link" href="#/health">Kesehatan</a>
+                            <a id="health" class="nav-link p-3" href="#/health">Kesehatan</a>
                         </li>
                         <li class="nav-item">
-                            <a id="science" class="nav-link" href="#/science">Sains</a>
+                            <a id="science" class="nav-link p-3" href="#/science">Sains</a>
                         </li>
                         <li class="nav-item">
-                            <a id="sports" class="nav-link" href="#/sports">Olahraga</a>
+                            <a id="sports" class="nav-link p-3" href="#/sports">Olahraga</a>
                         </li>
                         <li class="nav-item">
-                            <a id="technology" class="nav-link" href="#/technology">Teknologi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#/bookmark">Bookmark</a>
+                            <a id="technology" class="nav-link p-3" href="#/technology">Teknologi</a>
                         </li>
                     </ul>
                     <form action="#/search/${Math.random()}" class="d-flex">
@@ -43,9 +40,6 @@ class AppBar extends HTMLElement {
                 </div>
             </div>
         </nav>
-        <ul id="category" class="nav justify-content-center p-2">
-            
-        </ul>
       `;
   }
 }
