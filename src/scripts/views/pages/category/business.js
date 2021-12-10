@@ -1,11 +1,11 @@
 import NewsSource from '../../../data/news-source';
-import { createNewsImageOverlays, createNewsItemSide, createNewsItemTemplate } from '../../templates/template-creator';
+import { createInternationalNewsItemTemplate, createNewsImageOverlays, createNewsItemSide, createNewsItemTemplate } from '../../templates/template-creator';
 
 const Business = {
   async render() {
     return `
     <div class="content">
-        <h2 class="content__heading">Bisnis</h2>
+        <h2 class="card-header">Bisnis</h2>
         <div id="news" class="news">
 
         </div>
@@ -17,7 +17,7 @@ const Business = {
   async afterRender() {
     const news = await NewsSource.category_business();
     const newsContainer = document.querySelector('#news');
-    const sideNewsItem = document.querySelector('#sideItem');
+    const topNewsItem = document.querySelector('#topNews');
     let i = 0;
     news.slice(0, 5).forEach((item) => {
       if (i === 0) {
@@ -28,7 +28,15 @@ const Business = {
       i++;
     });
     news.slice(15, 20).forEach((item, index) => {
-      sideNewsItem.innerHTML += createNewsItemSide(item, index);
+      topNewsItem.innerHTML += createNewsItemSide(item, index);
+    });
+
+    const interNews = await NewsSource.international_news();
+    console.log(interNews);
+    const internationalNewsItem = document.querySelector('#internationalNews');
+    console.log(internationalNewsItem);
+    interNews.slice(0, 5).forEach((item) => {
+      internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
   },
 };

@@ -1,12 +1,12 @@
 /* eslint-disable max-len */
 import NewsSource from '../../data/news-source';
-import { createNewsItemTemplate } from '../templates/template-creator';
+import { createNewsItemSide, createNewsItemTemplate } from '../templates/template-creator';
 
 const SearchPage = {
   async render() {
     return `
     <div class="content">
-        <h5 id="heading-search" class="content__heading"></h5>
+        <h5 id="heading-search" class="card-header"></h5>
         <div id="news" class="news">
 
         </div>
@@ -29,6 +29,12 @@ const SearchPage = {
         newsContainer.innerHTML += createNewsItemTemplate(item);
       });
     }
+
+    const topNews = await NewsSource.home();
+    const topNewsItem = document.querySelector('#topNews');
+    topNews.slice(15, 20).forEach((item, index) => {
+      topNewsItem.innerHTML += createNewsItemSide(item, index);
+    });
   },
 };
 

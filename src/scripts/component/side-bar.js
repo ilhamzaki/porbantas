@@ -7,13 +7,20 @@ class SideBar extends HTMLElement {
     this.innerHTML = `
     <aside class="ms-4">
         <article>
-        <div class="text-dark mb-3">
-            <div class="card-header ps-0"><h2>Berita Terpopuler</h2></div>
-            <ol id="sideItem" class="list-group ps-3">
-                
-            </ol>
+          <div class="mb-5">
+                <h2 class="card-header">Berita Terpopuler</h2>
+                <ol id="topNews" class="list-group ps-3">
+                    
+                </ol>
+              </div>
+          </div>
+          <div class="mb-5">
+              <h2 class="card-header">Berita Internasional</h2>
+              <div id="internationalNews" class="news">
+
+              </div>
             </div>
-        </div>
+          </div>
         </article>
     </aside>
         `;

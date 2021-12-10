@@ -49,14 +49,25 @@ main {
   opacity: 40%;
 }
 
+.source-news {
+  height: 300px;
+  padding-top: 50px;
+}
+
+.source-header {
+  margin-bottom: 30px;
+}
+
+.news-cover {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .flex-container {
   display: flex;
   justify-content: space-between;
   margin: 0px 10%;
-}
-
-.content__heading {
-  margin-bottom: 20px;
 }
 
 .content {
@@ -73,27 +84,41 @@ side-bar {
 }
 
 .news-desciption {
-  font-size: 12px;
+  padding-top: 8px;
 }
 
 .side-news-title {
-  font-size: 18px;
+  font-size: 16px;
   color: black;
 }
 
-.news-source {
+.inter {
+  font-size: 14px;
+}
+
+/* .news-source {
   position: absolute;
   top: 0;
   padding: 5px 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 5px 0px;
   color: white;
+} */
+
+.source-text {
+  color: red;
+  padding-right: 10px;
 }
 
 .bookmark-icon {
   position: absolute;
   bottom: 15px;
   right: 0;
+}
+
+.bookmark {
+  border: unset;
+  background-color: white;
   padding: 5px 20px;
   font-size: 20px;
 }
@@ -116,6 +141,11 @@ footer p a {
 
 /* bootstrap edited */
 
+.container-fluid {
+  margin: 0 10%;
+  padding: 0;
+}
+
 .nav-link:hover {
   background-color: rgb(0, 0, 0);
 }
@@ -123,6 +153,16 @@ footer p a {
 .card-img-overlay {
   top: unset;
   padding: 2rem;
+}
+
+.card {
+  border: unset;
+  border-radius: unset;
+}
+
+.card-header {
+  margin-bottom: 20px;
+  padding-left: 0px;
 }
 
 .bg-color {
@@ -133,6 +173,10 @@ footer p a {
   color: white;
   font-weight: 800;
   font-size: 24px;
+}
+
+.overlays-title:hover {
+  color: orange;
 }
 
 .card-header {
