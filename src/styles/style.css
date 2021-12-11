@@ -64,6 +64,11 @@ main {
   object-position: center;
 }
 
+.img-group {
+  height: 200px;
+  object-fit: cover;
+}
+
 .flex-container {
   display: flex;
   justify-content: space-between;
@@ -110,7 +115,18 @@ side-bar {
   padding-right: 10px;
 }
 
-.bookmark-icon {
+.source-text-overlays {
+  padding-right: 10px;
+}
+
+.number {
+  font-size: 24px;
+}
+
+thead {
+  font-size: 18px;
+}
+/* .bookmark-icon {
   position: absolute;
   bottom: 15px;
   right: 0;
@@ -121,7 +137,7 @@ side-bar {
   background-color: white;
   padding: 5px 20px;
   font-size: 20px;
-}
+} */
 
 footer {
   padding: 16px;
