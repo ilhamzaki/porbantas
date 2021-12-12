@@ -36,9 +36,9 @@ const Home = {
     });
 
     const interNews = await NewsSource.international_news();
-    console.log(interNews);
+    // console.log(interNews);
     const internationalNewsItem = document.querySelector('#internationalNews');
-    console.log(internationalNewsItem);
+    // console.log(internationalNewsItem);
     interNews.slice(0, 5).forEach((item) => {
       internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
