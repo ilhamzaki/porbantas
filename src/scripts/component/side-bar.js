@@ -9,7 +9,7 @@ class SideBar extends HTMLElement {
         <article>
           <div class="mb-5">
                 <h2 class="card-header">Berita Terpopuler</h2>
-                <ol id="topNews" class="list-group ps-3">
+                <ol id="topNews" class="list-group">
                     
                 </ol>
               </div>

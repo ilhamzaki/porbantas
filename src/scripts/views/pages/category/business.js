@@ -17,7 +17,6 @@ const Business = {
 
         </div>
     </div>
-    <side-bar></side-bar>
         `;
   },
 
@@ -34,6 +33,7 @@ const Business = {
       }
       i++;
     });
+
     news.slice(15, 20).forEach((item, index) => {
       topNewsItem.innerHTML += createNewsPopularSide(item, index);
     });

@@ -1,8 +1,8 @@
 const createNewsImageOverlays = (news) => `
     <div class="card bg-dark text-white mb-5 overflow-hidden">
         <img src="${news.urlToImage || 'image-not-found.png'}" class="img-fluid card-img" alt="image-news ${news.source.name}">
-        <div class="card-img-overlay bg-color">
-            <a href='${news.url}' class="overlays-title card-title" target="_blank">${news.title}</a>
+        <div class="card-img-overlay bg-color p-4">
+            <a href='${news.url}' class="overlays-title fs-5 fw-bold card-title" target="_blank">${news.title}</a>
             <p class="card-text"><span class="source-text-overlays">${news.source.name}</span> ${news.publishedAt.substring(0, 10)}</p>
         </div>
     </div>
@@ -12,10 +12,10 @@ const createNewsImageOverlays = (news) => `
 const createNewsItemTemplate = (news) => `
     <div class="card mb-3">
         <div class="row g-0">
-            <div class="col-md-4">
-                <img src="${news.urlToImage || 'image-not-found.png'}" class="img-fluid rounded-start" alt="image-${news.source.name}">
+            <div class="col-lg-4">
+                <img src="${news.urlToImage || 'image-not-found.png'}" class="img-fluid rounded-start pb-3" alt="image-${news.source.name}">
             </div>
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <div class="card-body pt-0">
                     <a href='${news.url}' class="fw-bold news-title" target="_blank">${news.title}</a>
                     <p class="card-text news-desciption">${news.description || ''}</p>
@@ -39,7 +39,7 @@ const createInternationalNewsItemTemplate = (news) => `
 <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="${news.urlToImage || 'image-not-found.png'}" class="img-fluid rounded-start news-cover" alt="image-${news.source.name}">
+                    <img src="${news.urlToImage || 'image-not-found.png'}" class="img-fluid rounded-start news-cover pb-3" alt="image-${news.source.name}">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body pt-0">
@@ -72,9 +72,13 @@ const createUpdateCoronaTemplate = (news) => `
             </tr>
         </tbody>
     </table>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="https://covid19.go.id/peta-sebaran" target="_blank">Lihat Selengkapnya -></a>  
+    </div>
+    
 `;
 
-const createTwitterTrendsTemplate = (news, index) => `
+const createTwitterTrendsTemplate = (news) => `
     <li class="list-group-item d-flex justify-content-between align-items-start border-bottom ps-0">
         <a href='https://twitter.com/search?q=${news.name.replace('#', '%23')}' class="text-dark" target="_blank">${news.name}</a>
         <small class="text-muted">${news.tweet_count.replaceAll('K', ' rb Tweet') || ''}</small>
