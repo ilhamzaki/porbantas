@@ -1,5 +1,4 @@
 import Home from '../views/pages/home';
-import Bookmark from '../views/pages/bookmark';
 import Business from '../views/pages/category/business';
 import Entertainment from '../views/pages/category/entertainment';
 import Health from '../views/pages/category/health';
@@ -16,7 +15,6 @@ const routes = {
   '/science': Science,
   '/sports': Sport,
   '/technology': Technology,
-  '/bookmark': Bookmark,
   // search:searchElement.value (solusi untuk bug pencarian ke 2x, harus perpindah routes)
   '/search/:keyword': SearchPage,
 };

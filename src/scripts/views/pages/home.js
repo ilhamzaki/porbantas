@@ -16,7 +16,7 @@ const Home = {
 
         </div>
     </div>
-    <side-bar></side-bar>
+    
         `;
   },
 
@@ -25,7 +25,7 @@ const Home = {
     const newsContainer = document.querySelector('#news');
     const topNewsItem = document.querySelector('#topNews');
     let i = 0;
-    news.slice(0, 7).forEach((item) => {
+    news.slice(1, 10).forEach((item) => {
       if (i === 0) {
         newsContainer.innerHTML += createNewsImageOverlays(item);
       } else {
@@ -37,9 +37,12 @@ const Home = {
       topNewsItem.innerHTML += createNewsPopularSide(item, index);
     });
 
+    // const sidebarContainer = dispatchEvent.querySelector('#sidebarContainer');
+    // sidebarContainer.innerHTML += '<side-bar></side-bar>';
+
     const interNews = await NewsSource.international_news();
     const internationalNewsItem = document.querySelector('#internationalNews');
-    interNews.slice(0, 5).forEach((item) => {
+    interNews.slice(1, 5).forEach((item) => {
       internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
 
@@ -49,8 +52,8 @@ const Home = {
 
     const twitterTrends = await NewsSource.twitter_trends();
     const twitterTrendsItem = document.querySelector('#twitterTrends');
-    twitterTrends.slice(0, 5).forEach((item, index) => {
-      twitterTrendsItem.innerHTML += createTwitterTrendsTemplate(item, index);
+    twitterTrends.slice(0, 5).forEach((item) => {
+      twitterTrendsItem.innerHTML += createTwitterTrendsTemplate(item);
     });
   },
 };
