@@ -41,8 +41,10 @@ const Home = {
     // sidebarContainer.innerHTML += '<side-bar></side-bar>';
 
     const interNews = await NewsSource.international_news();
+    // console.log(interNews);
     const internationalNewsItem = document.querySelector('#internationalNews');
-    interNews.slice(1, 5).forEach((item) => {
+    // console.log(internationalNewsItem);
+    interNews.slice(0, 5).forEach((item) => {
       internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
 
