@@ -9,10 +9,13 @@ import UrlParser from '../routes/url-parser';
 import DrawerInitiator from '../utils/drawer-initiator';
 
 class App {
-  constructor({ button, drawer, content }) {
+  constructor({
+    button, drawer, content, sideContent,
+  }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
+    // this._sideContent = sideContent;
 
     this._initialAppShell();
   }
@@ -23,6 +26,7 @@ class App {
       button: this._button,
       drawer: this._drawer,
       content: this._content,
+      // sideContent: this._sideContent,
     });
   }
 
@@ -30,6 +34,7 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();
+    // this._sideContent.innerHTML = await page.render();
     await page.afterRender();
   }
 }

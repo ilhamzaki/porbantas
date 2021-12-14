@@ -1,5 +1,12 @@
 import NewsSource from '../../../data/news-source';
-import { createInternationalNewsItemTemplate, createNewsImageOverlays, createNewsItemSide, createNewsItemTemplate } from '../../templates/template-creator';
+import {
+  createNewsItemTemplate,
+  createNewsImageOverlays,
+  createNewsPopularSide,
+  createInternationalNewsItemTemplate,
+  createUpdateCoronaTemplate,
+  createTwitterTrendsTemplate,
+} from '../../templates/template-creator';
 
 const Sport = {
   async render() {
@@ -28,7 +35,7 @@ const Sport = {
       i++;
     });
     news.slice(15, 20).forEach((item, index) => {
-      topNewsItem.innerHTML += createNewsItemSide(item, index);
+      topNewsItem.innerHTML += createNewsPopularSide(item, index);
     });
 
     const interNews = await NewsSource.international_news();
@@ -37,6 +44,16 @@ const Sport = {
     console.log(internationalNewsItem);
     interNews.slice(0, 5).forEach((item) => {
       internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
+    });
+
+    const coronaUpdate = await NewsSource.corona_update();
+    const coronaUpdateItem = document.querySelector('#coronaUpdate');
+    coronaUpdateItem.innerHTML += createUpdateCoronaTemplate(coronaUpdate);
+
+    const twitterTrends = await NewsSource.twitter_trends();
+    const twitterTrendsItem = document.querySelector('#twitterTrends');
+    twitterTrends.slice(0, 5).forEach((item, index) => {
+      twitterTrendsItem.innerHTML += createTwitterTrendsTemplate(item, index);
     });
   },
 };

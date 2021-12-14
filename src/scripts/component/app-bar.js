@@ -4,10 +4,11 @@ class AppBar extends HTMLElement {
   }
 
   render() {
+    // fixed-top
     this.innerHTML = `
-        <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand fw-bold" href="#/">Porbantas</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#/"><img src="logo-porbantas.svg" class="me-3" alt="logo">Porbantas</a>
                 <button id="hamburgerButton" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
