@@ -28,7 +28,7 @@ class SideBar extends HTMLElement {
             </div>
           </div>
           <div class="mb-5">
-            <h2 class="card-header"><img src="source-logo/logo-twitter.png" class="me-2" alt="">Tren untuk Anda</h2>
+            <h2 class="card-header"><img src="source-image/logo-twitter.png" class="me-2" alt="">Tren untuk Anda</h2>
             <div id="twitterTrends" class="news">
               
             </div>
