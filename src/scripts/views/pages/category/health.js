@@ -11,13 +11,21 @@ import {
 const Health = {
   async render() {
     return `
-    <div class="content">
-        <h2 class="card-header">Kesehatan</h2>
-        <div id="news" class="news">
+    <div class="row">
+      <div class="col-lg-8 p-4 pt-0"> 
+        <section>
+          <div id="content" class="content">
+            <h2 class="card-header">Kesehatan</h2>
+            <div id="news" class="news">
 
-        </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div id="sidebarContainer" class="col-lg-4">
+        <side-bar></side-bar>
+      </div>
     </div>
-    <side-bar></side-bar>
         `;
   },
 
@@ -26,7 +34,7 @@ const Health = {
     const newsContainer = document.querySelector('#news');
     const topNewsItem = document.querySelector('#topNews');
     let i = 0;
-    news.slice(0, 5).forEach((item) => {
+    news.slice(0, 10).forEach((item) => {
       if (i === 0) {
         newsContainer.innerHTML += createNewsImageOverlays(item);
       } else {
@@ -34,14 +42,13 @@ const Health = {
       }
       i++;
     });
+
     news.slice(15, 20).forEach((item, index) => {
       topNewsItem.innerHTML += createNewsPopularSide(item, index);
     });
 
     const interNews = await NewsSource.international_news();
-    console.log(interNews);
     const internationalNewsItem = document.querySelector('#internationalNews');
-    console.log(internationalNewsItem);
     interNews.slice(0, 5).forEach((item) => {
       internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
@@ -52,7 +59,7 @@ const Health = {
 
     const twitterTrends = await NewsSource.twitter_trends();
     const twitterTrendsItem = document.querySelector('#twitterTrends');
-    twitterTrends.slice(0, 5).forEach((item, index) => {
+    twitterTrends.forEach((item, index) => {
       twitterTrendsItem.innerHTML += createTwitterTrendsTemplate(item, index);
     });
   },
