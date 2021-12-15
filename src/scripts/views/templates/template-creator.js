@@ -26,6 +26,17 @@ const createNewsItemTemplate = (news) => `
     </div>
 `;
 
+const createSecondNewsItemTemplate = (news) => `
+    <div class="card">
+        <img src="${news.urlToImage || 'image-not-found.png'}" class="card-img-top" alt="image-${news.source.name}">
+        <div class="card-body">
+            <a href='${news.url}' class="fw-bold news-title" target="_blank">${news.title}</a>
+            <p class="card-text news-desciption">${news.description || ''}</p>
+            <p class="card-text"><small class="text-muted"><span class="source-text">${news.source.name}</span> ${news.publishedAt.substring(0, 10)}</small></p>
+        </div>
+    </div>
+`;
+
 const createNewsPopularSide = (news, index) => `
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <span class="fs-2 fw-bold news-number">#${index + 1}</span>
@@ -88,6 +99,7 @@ const createTwitterTrendsTemplate = (news) => `
 export {
   createNewsImageOverlays,
   createNewsItemTemplate,
+  createSecondNewsItemTemplate,
   createNewsPopularSide,
   createInternationalNewsItemTemplate,
   createUpdateCoronaTemplate,

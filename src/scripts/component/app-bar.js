@@ -3,10 +3,18 @@ class AppBar extends HTMLElement {
     this.render();
   }
 
+  set clickEvent(event) {
+    this._clickEvent = event;
+    this.render();
+  }
+
+  get value() {
+    return this.querySelector('#searchButtonElement').value;
+  }
+
   render() {
-    // fixed-top
     this.innerHTML = `
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="#/"><img src="logo-porbantas.svg" class="me-3" alt="logo">Porbantas</a>
                 <button id="hamburgerButton" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,14 +42,16 @@ class AppBar extends HTMLElement {
                             <a id="technology" class="nav-link p-3" href="#/technology">Teknologi</a>
                         </li>
                     </ul>
-                    <form action="#/search/${Math.random()}" class="d-flex">
+                    <form action="#/search" class="d-flex">
                         <input id="search-bar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button id="searchButtonElement" class="btn btn-dark" type="submit" onClick="window.location.reload();"><i class="bi bi-search"></i></button>
+                        <button id="searchButtonElement" class="btn btn-dark" type="submit"><i class="bi bi-search"></i></button>
                     </form>
                 </div>
             </div>
         </nav>
       `;
+
+    this.querySelector('#searchButtonElement').addEventListener('click', this._clickEvent);
   }
 }
 
