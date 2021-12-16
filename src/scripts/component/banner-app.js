@@ -17,7 +17,10 @@ class BannerApp extends HTMLElement {
             </div>
           </div>
           <div class="col-md-6 p-0">
-            <img src="source-image/hero-image.jpg" class="img-fluid cover" alt="hero-image">
+            <picture>
+              <source media="(max-width: 600px)" srcset="./images/hero-image-small.png">
+              <img src="./images/hero-image-large.png" class="img-fluid cover" alt="hero-image" height="150">
+            </picture>
           </div>
         </div>
       </div>
