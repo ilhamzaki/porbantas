@@ -9,6 +9,51 @@ const createNewsImageOverlays = (news) => `
     <h2 class="card-header">Berita Terkini</h2>
 `;
 
+const createSkeletonNewsTemplate = (count) => {
+    let template = '';
+  
+    for (let i = 0; i < count; i += 1) {
+      template += `
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-lg-4">
+                <div class="skeleton skeleton-image skeleton-animation"></div>
+                </div>
+                <div class="col-sm-8 skeleton-animation">
+                    <div class="card-body pt-0">
+                        <div class="skeleton">Lorem, ipsum.</div>
+                        <div class="skeleton">Lorem, ipsum.</div>
+                        <div class="skeleton skeleton-sm">Lorem, ipsum.</div>
+                    </div>              
+                </div>
+            </div>
+        </div>
+    `;
+    }
+    return template;
+  };
+
+  const createSkeletonNewsAsideTemplate = (count) => {
+    let template = '';
+  
+    for (let i = 0; i < count; i += 1) {
+      template += `
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-lg-8">
+                    <div class="card-body pt-0 skeleton-animation">
+                        <div class="skeleton">Lorem ipsum dolor sit amet.</div>
+                        <div class="skeleton">Lorem ipsum dolor sit amet.</div>
+                        <div class="skeleton">Lorem ipsum dolor sit amet.</div>
+                    </div>              
+                </div>
+            </div>
+        </div>
+    `;
+    }
+    return template;
+  };
+
 const createNewsItemTemplate = (news) => `
     <div class="card mb-3">
         <div class="row g-0">
@@ -92,4 +137,6 @@ export {
   createInternationalNewsItemTemplate,
   createUpdateCoronaTemplate,
   createTwitterTrendsTemplate,
+  createSkeletonNewsTemplate,
+  createSkeletonNewsAsideTemplate,
 };
