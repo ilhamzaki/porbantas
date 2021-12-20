@@ -4,8 +4,8 @@
     "description": "Media berita dari berbagai sumber yang kredibel",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#d84315",
+    "background_color": "#212529",
+    "theme_color": "#212529",
     "icons": [
         {
             "src": "/icons/icon-72x72.png",

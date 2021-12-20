@@ -4,7 +4,6 @@ class BannerApp extends HTMLElement {
   }
 
   render() {
-    // <a href="#mainContent" class="btn btn-warning" disabled>Berita Terkini</a>
     this.innerHTML = `
     <div class="bg-dark">
       <div class="container">
@@ -18,8 +17,8 @@ class BannerApp extends HTMLElement {
           </div>
           <div class="col-md-6 p-0">
             <picture>
-              <source media="(max-width: 600px)" srcset="./images/hero-image-small.png">
-              <img src="./images/hero-image-large.png" class="img-fluid cover" alt="hero-image" height="150">
+              <source media="(max-width: 600px)" srcset="source-image/hero-image-small.png">
+              <img src="source-image/hero-image-large.png" class="img-fluid cover" alt="hero-image" height="150">
             </picture>
           </div>
         </div>
