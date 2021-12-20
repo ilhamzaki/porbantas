@@ -6,6 +6,7 @@ import {
   createInternationalNewsItemTemplate,
   createUpdateCoronaTemplate,
   createTwitterTrendsTemplate,
+  createSkeletonNewsTemplate,
   createSecondNewsItemTemplate,
 } from '../templates/template-creator';
 
@@ -17,7 +18,7 @@ const Home = {
         <section>
           <div id="content" class="content">
             <div id="news" class="news">
-
+              ${createSkeletonNewsTemplate(10)}
             </div>
           </div>
         </section>
@@ -41,12 +42,15 @@ const Home = {
     const newsContainer = document.querySelector('#news');
     const secondContent = document.querySelector('#secondContent');
     const topNewsItem = document.querySelector('#topNews');
+    newsContainer.innerHTML = " ";
+    topNewsItem.innerHTML = " ";
     let i = 0;
     news.slice(0, 10).forEach((item) => {
       if (i === 0) {
         newsContainer.innerHTML += createNewsImageOverlays(item);
       } else {
         newsContainer.innerHTML += createNewsItemTemplate(item);
+        // setTimeout(function(){newsContainer.innerHTML += createNewsItemTemplate(item)}, 2000) ;
       }
       i++;
     });
@@ -64,16 +68,20 @@ const Home = {
 
     const interNews = await NewsSource.international_news();
     const internationalNewsItem = document.querySelector('#internationalNews');
+    internationalNewsItem.innerHTML = " ";
+    // console.log(internationalNewsItem);
     interNews.slice(0, 5).forEach((item) => {
       internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
 
     const coronaUpdate = await NewsSource.corona_update();
     const coronaUpdateItem = document.querySelector('#coronaUpdate');
+    coronaUpdateItem.innerHTML = " ";
     coronaUpdateItem.innerHTML += createUpdateCoronaTemplate(coronaUpdate);
 
     const twitterTrends = await NewsSource.twitter_trends();
     const twitterTrendsItem = document.querySelector('#twitterTrends');
+    twitterTrendsItem.innerHTML = " ";
     twitterTrends.forEach((item) => {
       twitterTrendsItem.innerHTML += createTwitterTrendsTemplate(item);
     });

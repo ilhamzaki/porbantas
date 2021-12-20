@@ -16,29 +16,49 @@
 
 <body>
   <header>
-      <app-bar></app-bar>
+    <app-bar></app-bar>
   </header>
   <banner-app></banner-app>
   <main id="mainContent" class="container">
-    
+
   </main>
 
   <div class="bg-light mb-5">
     <div class="text-center text-dark mt-3 p-4 container">
       <h2>Sumber Berita</h2>
       <div class="row justify-content-lg-between">
-          <div class="col-lg-2">
-            <a href="https://www.kompas.com/" target="_blank"><img src="source-logo/kompas.com.png" alt="kompas.com" height="150"></a>
-          </div>
-          <div class="col-lg-2">
-            <a href="https://www.detik.com/" target="_blank"><img src="source-logo/detikcom.png" alt="detikcom" height="150"></a>
-          </div>
-          <div class="col-lg-2">
-            <a href="https://www.cnnindonesia.com/" target="_blank"><img src="source-logo/CNN_Indonesia.png" alt="CNNindonesia" height="150"></a>
-          </div>
-          <div class="col-lg-2">
-            <a href="https://www.cnbcindonesia.com/" target="_blank"><img src="source-logo/CNBC_Indonesia.png" alt="CNBCindonesia" height="150"></a>
-          </div>
+        <div class="col-lg-2">
+          <a href="https://www.kompas.com/" target="_blank" rel="noopener">
+            <picture>
+              <source media="(max-width: 600px)" srcset="./images/kompas.com-small.png">
+              <img src="./images/kompas.com-large.png" alt="kompas.com" height="150">
+            </picture>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="https://www.detik.com/" target="_blank" rel="noopener">
+            <picture>
+              <source media="(max-width: 600px)" srcset="./images/detikcom-small.png">
+              <img src="./images/detikcom-large.png" alt="detikcom" height="150">
+            </picture>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="https://www.cnnindonesia.com/" target="_blank" rel="noopener">
+            <picture>
+              <source media="(max-width: 600px)" srcset="./images/CNN_Indonesia-small.png">
+              <img src="./images/CNN_Indonesia-large.png" alt="CNN_Indonesia" height="150">
+            </picture>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="https://www.cnbcindonesia.com/" target="_blank" rel="noopener">
+            <picture>
+              <source media="(max-width: 600px)" srcset="./images/CNBC_Indonesia-small.png">
+              <img src="./images/CNBC_Indonesia-large.png" alt="CNBC_Indonesia" height="150">
+            </picture>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -57,9 +77,14 @@
               Sumber API
             </h6>
             <div class="">
-              <p><a href="https://newsapi.org/s/indonesia-news-api" target="_blank" class="text-white">News API - Live top headlines</a></p>
-              <p><a href="https://github.com/Reynadi531/api-covid19-indonesia-v2" target="_blank" class="text-white">Covid-19 Indonesia</a></p>
-              <p><a href="https://github.com/azharimm/twitter-trends-api" target="_blank" class="text-white">Twitter Trends</a></p>
+              <p><a href="https://newsapi.org/s/indonesia-news-api" target="_blank" rel="noopener"
+                  class="text-white">News API - Live
+                  top headlines</a></p>
+              <p><a href="https://github.com/Reynadi531/api-covid19-indonesia-v2" target="_blank" rel="noopener"
+                  class="text-white">Covid-19 Indonesia</a></p>
+              <p><a href="https://github.com/azharimm/twitter-trends-api" target="_blank" rel="noopener"
+                  class="text-white">Twitter
+                  Trends</a></p>
             </div>
           </div>
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -67,7 +92,8 @@
               Sosial Media
             </h6>
             <div class="d-flex fs-3 justify-content-center justify-content-lg-between">
-              <a href="https://github.com/ilhamzaki/porbantas" target="_blank" class="text-white"><i class="bi bi-github me-3"></i></a>
+              <a href="https://github.com/ilhamzaki/porbantas" target="_blank" rel="noopener" class="text-white"><i
+                  class="bi bi-github me-3"></i></a>
               <i class="bi bi-linkedin me-3"></i></a>
               <i class="bi bi-instagram me-3"></i></a>
               <i class="bi bi-twitter me-3"></i></a>
@@ -78,9 +104,12 @@
       </div>
     </section>
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Copyright: 
-      <a class="text-reset fw-bold" href="https://github.com/ilhamzaki/porbantas" target="_blank">Capstone Project SIB Dicoding Team ID: CSD-039</a>
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="https://github.com/ilhamzaki/porbantas" target="_blank"
+        rel="noopener">Capstone Project SIB
+        Dicoding Team ID: CSD-039</a>
     </div>
   </footer>
 </body>
+
 </html>
