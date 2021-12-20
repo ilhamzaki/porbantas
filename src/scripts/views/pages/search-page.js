@@ -11,13 +11,21 @@ import {
 const SearchPage = {
   async render() {
     return `
-    <div class="content">
-        <h5 id="heading-search" class="card-header"></h5>
-        <div id="news" class="news">
+    <div class="row">
+      <div class="col-lg-8 p-4 pt-0"> 
+        <section>
+          <div id="content" class="content">
+            <h5 id="heading-search" class="card-header"></h5>
+            <div id="news" class="news">
 
-        </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div id="sidebarContainer" class="col-lg-4">
+        <side-bar></side-bar>
+      </div>
     </div>
-    <side-bar></side-bar>
         `;
   },
 
@@ -25,10 +33,9 @@ const SearchPage = {
     const searchElement = document.querySelector('#search-bar');
     const newsContainer = document.querySelector('#news');
     const news = await NewsSource.search_news(searchElement.value.toLowerCase());
-    console.log(news);
+    newsContainer.innerHTML = '';
     if (searchElement.value === '' || news.length === 0) {
       document.querySelector('#heading-search').innerHTML = `Hasil pencarian ${searchElement.value} tidak ditemukan`;
-      this.render();
     } else {
       document.querySelector('#heading-search').innerHTML = `Hasil pencarian "${searchElement.value}"`;
       news.forEach((item) => {
@@ -38,23 +45,27 @@ const SearchPage = {
 
     const topNews = await NewsSource.home();
     const topNewsItem = document.querySelector('#topNews');
+    topNewsItem.innerHTML = '';
     topNews.slice(15, 20).forEach((item, index) => {
       topNewsItem.innerHTML += createNewsPopularSide(item, index);
     });
 
     const interNews = await NewsSource.international_news();
     const internationalNewsItem = document.querySelector('#internationalNews');
+    internationalNewsItem.innerHTML = '';
     interNews.slice(0, 5).forEach((item) => {
       internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
 
     const coronaUpdate = await NewsSource.corona_update();
     const coronaUpdateItem = document.querySelector('#coronaUpdate');
+    coronaUpdateItem.innerHTML = '';
     coronaUpdateItem.innerHTML += createUpdateCoronaTemplate(coronaUpdate);
 
     const twitterTrends = await NewsSource.twitter_trends();
     const twitterTrendsItem = document.querySelector('#twitterTrends');
-    twitterTrends.slice(0, 5).forEach((item, index) => {
+    twitterTrendsItem.innerHTML = '';
+    twitterTrends.forEach((item, index) => {
       twitterTrendsItem.innerHTML += createTwitterTrendsTemplate(item, index);
     });
   },

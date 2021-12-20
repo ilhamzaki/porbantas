@@ -23,6 +23,10 @@ h2 {
   font-weight: bold;
 }
 
+banner-app {
+  padding-top: 70px;
+}
+
 main {
   padding: 32px 0px;
   flex: 1;

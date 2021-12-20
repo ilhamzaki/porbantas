@@ -15,8 +15,8 @@ const routes = {
   '/science': Science,
   '/sports': Sport,
   '/technology': Technology,
-  // search:searchElement.value (solusi untuk bug pencarian ke 2x, harus perpindah routes)
-  '/search/:keyword': SearchPage,
+  // '/search/:keyword': SearchPage,
+  '/search': SearchPage,
 };
 
 export default routes;
