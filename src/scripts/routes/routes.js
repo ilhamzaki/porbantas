@@ -1,21 +1,18 @@
 import Home from '../views/pages/home';
-import Business from '../views/pages/category/business';
-import Entertainment from '../views/pages/category/entertainment';
-import Health from '../views/pages/category/health';
-import Science from '../views/pages/category/science';
-import Sport from '../views/pages/category/sports';
-import Technology from '../views/pages/category/technology';
+import CNN from '../views/pages/category/cnn';
+import CNBC from '../views/pages/category/cnbc';
+import SINDONEWS from '../views/pages/category/sindonews';
+import KUMPARAN from '../views/pages/category/kumparan';
+import OKEZONE from '../views/pages/category/okezone';
 import SearchPage from '../views/pages/search-page';
 
 const routes = {
   '/': Home,
-  '/business': Business,
-  '/entertainment': Entertainment,
-  '/health': Health,
-  '/science': Science,
-  '/sports': Sport,
-  '/technology': Technology,
-  // '/search/:keyword': SearchPage,
+  '/cnn': CNN,
+  '/cnbc': CNBC,
+  '/sindonews': SINDONEWS,
+  '/kumparan': KUMPARAN,
+  '/okezone': OKEZONE,
   '/search': SearchPage,
 };
 

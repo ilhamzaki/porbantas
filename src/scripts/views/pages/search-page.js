@@ -30,30 +30,30 @@ const SearchPage = {
   },
 
   async afterRender() {
+    const news = await NewsSource.news('cnn', 'terbaru');
     const searchElement = document.querySelector('#search-bar');
     const newsContainer = document.querySelector('#news');
-    const news = await NewsSource.search_news(searchElement.value.toLowerCase());
+    const searchData = news.posts.filter((item) => item.title.toLowerCase().includes(searchElement.value.toLowerCase()));
     newsContainer.innerHTML = '';
-    if (searchElement.value === '' || news.length === 0) {
+    if (searchElement.value === '' || searchData.length === 0) {
       document.querySelector('#heading-search').innerHTML = `Hasil pencarian ${searchElement.value} tidak ditemukan`;
     } else {
       document.querySelector('#heading-search').innerHTML = `Hasil pencarian "${searchElement.value}"`;
-      news.forEach((item) => {
+      searchData.forEach((item) => {
         newsContainer.innerHTML += createNewsItemTemplate(item);
       });
     }
 
-    const topNews = await NewsSource.home();
     const topNewsItem = document.querySelector('#topNews');
     topNewsItem.innerHTML = '';
-    topNews.slice(15, 20).forEach((item, index) => {
+    news.posts.slice(15, 20).forEach((item, index) => {
       topNewsItem.innerHTML += createNewsPopularSide(item, index);
     });
 
-    const interNews = await NewsSource.international_news();
+    const interNews = await NewsSource.news('cnn', 'internasional');
     const internationalNewsItem = document.querySelector('#internationalNews');
     internationalNewsItem.innerHTML = '';
-    interNews.slice(0, 5).forEach((item) => {
+    interNews.posts.slice(0, 5).forEach((item) => {
       internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
 

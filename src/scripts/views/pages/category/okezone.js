@@ -6,18 +6,19 @@ import {
   createInternationalNewsItemTemplate,
   createUpdateCoronaTemplate,
   createTwitterTrendsTemplate,
+  createSourceDetailTemplate,
+  createSkeletonNewsTemplate,
 } from '../../templates/template-creator';
 
-const Technology = {
+const OKEZONE = {
   async render() {
     return `
     <div class="row">
       <div class="col-lg-8 p-4 pt-0"> 
         <section>
           <div id="content" class="content">
-            <h2 class="card-header">Teknologi</h2>
             <div id="news" class="news">
-
+              ${createSkeletonNewsTemplate(10)}
             </div>
           </div>
         </section>
@@ -30,11 +31,11 @@ const Technology = {
   },
 
   async afterRender() {
-    const news = await NewsSource.category_technology();
+    const news = await NewsSource.news('okezone', 'terbaru');
     const newsContainer = document.querySelector('#news');
-    const topNewsItem = document.querySelector('#topNews');
+    newsContainer.innerHTML = createSourceDetailTemplate(news);
     let i = 0;
-    news.slice(0, 10).forEach((item) => {
+    news.posts.slice(0, 15).forEach((item) => {
       if (i === 0) {
         newsContainer.innerHTML += createNewsImageOverlays(item);
       } else {
@@ -43,26 +44,31 @@ const Technology = {
       i++;
     });
 
-    news.slice(15, 20).forEach((item, index) => {
+    const topNewsItem = document.querySelector('#topNews');
+    topNewsItem.innerHTML = '';
+    news.posts.slice(15, 20).forEach((item, index) => {
       topNewsItem.innerHTML += createNewsPopularSide(item, index);
     });
 
-    const interNews = await NewsSource.international_news();
+    const interNews = await NewsSource.news('cnn', 'internasional');
     const internationalNewsItem = document.querySelector('#internationalNews');
-    interNews.slice(0, 5).forEach((item) => {
+    internationalNewsItem.innerHTML = '';
+    interNews.posts.slice(0, 5).forEach((item) => {
       internationalNewsItem.innerHTML += createInternationalNewsItemTemplate(item);
     });
 
     const coronaUpdate = await NewsSource.corona_update();
     const coronaUpdateItem = document.querySelector('#coronaUpdate');
+    coronaUpdateItem.innerHTML = '';
     coronaUpdateItem.innerHTML += createUpdateCoronaTemplate(coronaUpdate);
 
     const twitterTrends = await NewsSource.twitter_trends();
     const twitterTrendsItem = document.querySelector('#twitterTrends');
+    twitterTrendsItem.innerHTML = '';
     twitterTrends.forEach((item, index) => {
       twitterTrendsItem.innerHTML += createTwitterTrendsTemplate(item, index);
     });
   },
 };
 
-export default Technology;
+export default OKEZONE;

@@ -17,7 +17,7 @@ const DrawerInitiator = {
 
   _closeDrawer(event, drawer) {
     event.stopPropagation();
-    drawer.classList.remove('collapse');
+    drawer.classList.add('collapse');
   },
 };
 

@@ -36,19 +36,13 @@ main {
   height: 600px;
 }
 
-/* .hero-text {
-  margin: 0 5% 0 10%;
-} */
-
 .headline-title {
   font-size: 42px;
 }
 
 .cover {
-  /* width: 60%; */
   height: 100%;
   object-fit: cover;
-  /* object-position: center; */
 }
 
 .source-news {
@@ -91,15 +85,6 @@ main {
   font-size: 14px;
 }
 
-/* .news-source {
-  position: absolute;
-  top: 0;
-  padding: 5px 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 5px 0px;
-  color: white;
-} */
-
 .source-text {
   color: red;
   padding-right: 10px;
@@ -116,35 +101,6 @@ main {
 thead {
   font-size: 18px;
 }
-
-/* .bookmark-icon {
-  position: absolute;
-  bottom: 15px;
-  right: 0;
-}
-
-.bookmark {
-  border: unset;
-  background-color: white;
-  padding: 5px 20px;
-  font-size: 20px;
-} */
-
-/* footer {
-  padding: 16px;
-}
-
-footer p {
-  text-align: center;
-  color: #aaaaaa;
-}
-
-footer p a {
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 12px 0px;
-} */
 
 /* bootstrap edited */
 
@@ -193,6 +149,8 @@ footer p a {
   border: none;
 }
 
+/* skeleton */
+
 .skeleton {
   user-select: none;
   background-color: #eeeeee;
@@ -215,7 +173,13 @@ footer p a {
 }
 
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: .5; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
