@@ -132,11 +132,31 @@ const createUpdateCoronaTemplate = (news) => `
     
 `;
 
-const createTwitterTrendsTemplate = (news) => `
-    <li class="list-group-item d-flex justify-content-between align-items-start border-bottom ps-0">
-        <a href='https://twitter.com/search?q=${news.name.replace('#', '%23')}' class="text-dark" target="_blank" rel="noopener">${news.name}</a>
-        <small class="text-muted">${news.tweet_count.replaceAll('K', ' rb Tweet') || ''}</small>
-    </li>
+const createUpdateVaksinTemplate = (news) => `
+    <table class="table align-middle">
+        <thead class="fw-bold table-dark">
+            <td>Indonesia</td>
+            <td>${news.date}</td>
+        </thead>
+        <tbody class="fw-bold">
+            <tr>
+                <td>Total Sasaran</td>
+                <td class="text-success number">${news.total_sasaran_vaksinasi.toLocaleString('es-US')}</td>
+            </tr>
+            <tr>
+                <td>Total Vaksinasi Dosis 1</td>
+                <td class="number">${news.vaksinasi1.toLocaleString('es-US')}</td>
+            </tr>
+            <tr>
+                <td>Total Vaksinasi Dosis 2</td>
+                <td class="number">${news.vaksinasi2.toLocaleString('es-US')}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="https://vaksin.kemkes.go.id/#/vaccines" target="_blank" rel="noopener">Lihat Selengkapnya &#8594;</a>  
+    </div>
+    
 `;
 
 export {
@@ -146,7 +166,7 @@ export {
   createNewsPopularSide,
   createInternationalNewsItemTemplate,
   createUpdateCoronaTemplate,
-  createTwitterTrendsTemplate,
+  createUpdateVaksinTemplate,
   createSkeletonNewsTemplate,
   createSkeletonNewsAsideTemplate,
 };

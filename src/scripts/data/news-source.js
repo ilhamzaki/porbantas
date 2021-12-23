@@ -13,10 +13,10 @@ class NewsSource {
     return responeJson;
   }
 
-  static async twitter_trends() {
-    const response = await fetch('https://api-twitter-trends.herokuapp.com/trends?location=indonesia');
-    const responJson = await response.json();
-    return responJson.data.trends[0].data;
+  static async vaksin_update() {
+    const response = await fetch('https://cekdiri.id/vaksinasi/');
+    const responeJson = await response.json();
+    return responeJson;
   }
 }
 

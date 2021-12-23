@@ -28,8 +28,8 @@ class SideBar extends HTMLElement {
             </div>
           </div>
           <div class="mb-5">
-            <h2 class="card-header"><img src="source-image/logo-twitter.png" class="me-2" alt="">Tren untuk Anda</h2>
-            <div id="twitterTrends" class="news">
+            <h2 class="card-header">Vaksinasi COVID-19</h2>
+            <div id="vaksinUpdate" class="news">
               ${createSkeletonNewsAsideTemplate(2)}
             </div>
           </div>
