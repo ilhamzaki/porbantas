@@ -5,7 +5,7 @@ import {
   createNewsPopularSide,
   createInternationalNewsItemTemplate,
   createUpdateCoronaTemplate,
-  createTwitterTrendsTemplate,
+  createUpdateVaksinTemplate,
 } from '../templates/template-creator';
 
 const SearchPage = {
@@ -62,12 +62,10 @@ const SearchPage = {
     coronaUpdateItem.innerHTML = '';
     coronaUpdateItem.innerHTML += createUpdateCoronaTemplate(coronaUpdate);
 
-    const twitterTrends = await NewsSource.twitter_trends();
-    const twitterTrendsItem = document.querySelector('#twitterTrends');
-    twitterTrendsItem.innerHTML = '';
-    twitterTrends.forEach((item, index) => {
-      twitterTrendsItem.innerHTML += createTwitterTrendsTemplate(item, index);
-    });
+    const vaksinUpdate = await NewsSource.vaksin_update();
+    const vaksinUpdateItem = document.querySelector('#vaksinUpdate');
+    vaksinUpdateItem.innerHTML = '';
+    vaksinUpdateItem.innerHTML += createUpdateVaksinTemplate(vaksinUpdate.monitoring.at(-1));
   },
 };
 
