@@ -8,7 +8,7 @@
     "build-image": "node sharp.js",
     "build": "webpack --config webpack.prod.js"
   },
-  "author": "",
+  "author": "Ilham zaki & Ahmad Muhyiddin",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.5",
